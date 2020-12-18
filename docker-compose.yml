@@ -21,6 +21,7 @@ services:
     volumes:
     - ./app/:/opt/app-root/src/
     - hitobito_bundle:/opt/bundle
+    - ./Gemfile.lock.dummy:/opt/app-root/src/hitobito/Gemfile.lock
 
   worker:
     <<: *rails
