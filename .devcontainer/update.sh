@@ -13,7 +13,7 @@ do
     cd "$repository_dir"
     echo "Updating repository: $(basename $repository_dir)"
     git checkout Gemfile.lock
-    git pull --ff-only
+    GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git pull --ff-only
   fi
 done
 
